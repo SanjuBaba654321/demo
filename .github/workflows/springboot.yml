@@ -1,4 +1,4 @@
-name: Spring Boot CI/CD
+name: Spring Boot CI
 
 on:
 push:
@@ -6,27 +6,22 @@ branches: [ "main" ]
 
 jobs:
 build:
-
-  ```
 runs-on: ubuntu-latest
-
+  
+  ```
 steps:
-
-  - name: Checkout Code
+  - name: Checkout source
     uses: actions/checkout@v4
 
   - name: Setup Java
     uses: actions/setup-java@v4
     with:
-      java-version: '17'
       distribution: 'temurin'
+      java-version: '17'
 
   - name: Build with Maven
-    run: mvn clean install -DskipTests
+    run: mvn clean install
 
   - name: Run Tests
     run: mvn test
-
-  - name: Build Jar
-    run: mvn package -DskipTests
-
+  

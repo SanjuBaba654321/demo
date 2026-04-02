@@ -1,0 +1,14 @@
+spring:
+  ai:
+    openai:
+      api-key: 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
+      chat:
+        options:
+          model: gpt-4o-mini
+
+
+kafka:
+  bootstrap-servers: kafka:9092
+
+server:
+  port: 8080

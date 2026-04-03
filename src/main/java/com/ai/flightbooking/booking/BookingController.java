@@ -16,6 +16,7 @@ public class BookingController {
 
   @PostMapping
   public BookingResponse create(@RequestBody BookingRequest request) {
+
     return bookingService.createBooking(request);
   }
 }
